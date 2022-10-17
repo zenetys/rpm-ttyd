@@ -1,0 +1,2 @@
+ttyd 1.7.1 json https://api.github.com/repos/tsl0922/ttyd/tags =([0-9.]+)
+libwebsockets 4.3.2 json https://api.github.com/repos/warmcat/libwebsockets/tags =v([0-9.]+)
