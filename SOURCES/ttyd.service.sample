@@ -1,0 +1,14 @@
+[Unit]
+Description=ttyd
+After=syslog.target
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/ttyd /bin/bash
+Type=exec
+Restart=always
+User=nobody
+Group=nobody
+
+[Install]
+WantedBy=multi-user.target
