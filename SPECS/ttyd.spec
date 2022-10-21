@@ -8,14 +8,14 @@
 
 Name: ttyd
 Summary: Share your terminal over the web
-Version: 1.7.1
+Version: 1.7.2
 Release: 1%{?dist}.zenetys
 License: MIT
 URL: https://github.com/tsl0922/ttyd
 
 Source0: https://github.com/tsl0922/ttyd/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: ttyd.service.sample
-Source2: ttyd-index-fix-reconnect.html
+Source2: ttyd-alt-index.html
 Source100: https://github.com/warmcat/libwebsockets/archive/refs/tags/v%{libwebsockets_version}.tar.gz#/%{libwebsockets_xprefix}.tar.gz
 
 BuildRequires: cmake
@@ -103,5 +103,5 @@ install -D -p -m 0644 -t %{buildroot}%{_datadir}/%{name}/ %{SOURCE2}
 %{_bindir}/ttyd
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/ttyd.service.sample
-%{_datadir}/%{name}/ttyd-index-fix-reconnect.html
+%{_datadir}/%{name}/ttyd-alt-index.html
 %{_mandir}/man1/ttyd.1.*
