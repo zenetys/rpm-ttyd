@@ -8,7 +8,7 @@
 
 Name: ttyd
 Summary: Share your terminal over the web
-Version: 1.7.2
+Version: 1.7.3
 Release: 1%{?dist}.zenetys
 License: MIT
 URL: https://github.com/tsl0922/ttyd

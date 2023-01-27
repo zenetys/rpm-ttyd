@@ -1,17 +1,17 @@
-From aebd70b4b433aa05ec59b1d1c390efb5218c5c0e Mon Sep 17 00:00:00 2001
+From 6366f49bf03ade4b758c9cf9e44524c5cc66829c Mon Sep 17 00:00:00 2001
 From: Julien Thomas <jthomas@zenetys.com>
 Date: Fri, 21 Oct 2022 23:13:49 +0200
-Subject: [PATCH 1/2] set sans-serif font on overlay
+Subject: [PATCH] set sans-serif font on overlay
 
 ---
- html/src/components/terminal/overlay.ts | 1 +
+ html/src/components/terminal/xterm/addons/overlay.ts | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/html/src/components/terminal/overlay.ts b/html/src/components/terminal/overlay.ts
-index 0438acf..1a8685d 100644
---- a/html/src/components/terminal/overlay.ts
-+++ b/html/src/components/terminal/overlay.ts
-@@ -10,6 +10,7 @@ export class OverlayAddon implements ITerminalAddon {
+diff --git a/html/src/components/terminal/xterm/addons/overlay.ts b/html/src/components/terminal/xterm/addons/overlay.ts
+index 6fa5a92..e6f049b 100644
+--- a/html/src/components/terminal/xterm/addons/overlay.ts
++++ b/html/src/components/terminal/xterm/addons/overlay.ts
+@@ -11,6 +11,7 @@ export class OverlayAddon implements ITerminalAddon {
      constructor() {
          this.overlayNode = document.createElement('div');
          this.overlayNode.style.cssText = `border-radius: 15px;
