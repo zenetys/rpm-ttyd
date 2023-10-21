@@ -1,0 +1,25 @@
+From b25e584cfbd42cba30957c63468e1fb018fd2752 Mon Sep 17 00:00:00 2001
+From: Alfonso Montero <amontero@tinet.org>
+Date: Tue, 3 Oct 2023 14:09:56 +0200
+Subject: [PATCH] Manpage: fix shorthand switch (#1203)
+
+---
+ man/ttyd.1 | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/man/ttyd.1 b/man/ttyd.1
+index 11d9dd7..83ba5f5 100644
+--- a/man/ttyd.1
++++ b/man/ttyd.1
+@@ -78,7 +78,7 @@ Cross platform: macOS, Linux, FreeBSD/OpenBSD, OpenWrt/LEDE, Windows
+       Allow client to send command line arguments in URL (eg: http://localhost:7681?arg=foo&arg=bar)
+ 
+ .PP
+--R, --writable
++-W, --writable
+       Allow clients to write to the TTY (readonly by default)
+ 
+ .PP
+-- 
+2.21.1
+

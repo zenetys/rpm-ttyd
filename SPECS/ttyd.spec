@@ -8,7 +8,7 @@
 
 Name: ttyd
 Summary: Share your terminal over the web
-Version: 1.7.3
+Version: 1.7.4
 Release: 1%{?dist}.zenetys
 License: MIT
 URL: https://github.com/tsl0922/ttyd
@@ -17,6 +17,8 @@ Source0: https://github.com/tsl0922/ttyd/archive/refs/tags/%{version}.tar.gz#/%{
 Source1: ttyd.service.sample
 Source2: ttyd-alt-index.html
 Source100: https://github.com/warmcat/libwebsockets/archive/refs/tags/v%{libwebsockets_version}.tar.gz#/%{libwebsockets_xprefix}.tar.gz
+
+Patch100: ttyd-1.7.4-manpage-writable-shortopt.patch
 
 BuildRequires: cmake
 BuildRequires: gcc
@@ -32,6 +34,7 @@ ttyd is a simple command-line tool for sharing terminal over the web.
 %prep
 # ttyd
 %setup -n %{name}-%{version}
+%patch100 -p1
 sed -i -e 's,find_package(Libwebsockets,#\0,' CMakeLists.txt
 
 # libwebsockets
@@ -63,6 +66,7 @@ cmake .. \
     -DLWS_WITH_HTTP_BASIC_AUTH=OFF \
     -DLWS_WITH_UDP=OFF \
     -DLWS_WITHOUT_CLIENT=ON \
+    -DLWS_WITHOUT_EXTENSIONS=OFF \
     -DLWS_WITH_LEJP=OFF \
     -DLWS_WITH_LEJP_CONF=OFF \
     -DLWS_WITH_LWSAC=OFF \
