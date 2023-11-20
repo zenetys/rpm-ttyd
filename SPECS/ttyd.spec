@@ -1,4 +1,4 @@
-%define libwebsockets_version 4.3.2
+%define libwebsockets_version 4.3.3
 %define libwebsockets_xprefix libwebsockets-%{libwebsockets_version}
 
 %if 0%{?rhel} == 7
@@ -9,7 +9,7 @@
 Name: ttyd
 Summary: Share your terminal over the web
 Version: 1.7.4
-Release: 1%{?dist}.zenetys
+Release: 2%{?dist}.zenetys
 License: MIT
 URL: https://github.com/tsl0922/ttyd
 
