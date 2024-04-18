@@ -1,4 +1,4 @@
-From 6366f49bf03ade4b758c9cf9e44524c5cc66829c Mon Sep 17 00:00:00 2001
+From de626e9941b317a82f2f9ecee226e62be302241c Mon Sep 17 00:00:00 2001
 From: Julien Thomas <jthomas@zenetys.com>
 Date: Fri, 21 Oct 2022 23:13:49 +0200
 Subject: [PATCH] set sans-serif font on overlay
@@ -8,7 +8,7 @@ Subject: [PATCH] set sans-serif font on overlay
  1 file changed, 1 insertion(+)
 
 diff --git a/html/src/components/terminal/xterm/addons/overlay.ts b/html/src/components/terminal/xterm/addons/overlay.ts
-index 6fa5a92..e6f049b 100644
+index 74da079..0286152 100644
 --- a/html/src/components/terminal/xterm/addons/overlay.ts
 +++ b/html/src/components/terminal/xterm/addons/overlay.ts
 @@ -11,6 +11,7 @@ export class OverlayAddon implements ITerminalAddon {

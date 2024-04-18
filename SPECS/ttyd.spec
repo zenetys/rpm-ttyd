@@ -8,8 +8,8 @@
 
 Name: ttyd
 Summary: Share your terminal over the web
-Version: 1.7.4
-Release: 2%{?dist}.zenetys
+Version: 1.7.7
+Release: 1%{?dist}.zenetys
 License: MIT
 URL: https://github.com/tsl0922/ttyd
 
@@ -18,9 +18,11 @@ Source1: ttyd.service.sample
 Source2: ttyd-alt-index.html
 Source100: https://github.com/warmcat/libwebsockets/archive/refs/tags/v%{libwebsockets_version}.tar.gz#/%{libwebsockets_xprefix}.tar.gz
 
-Patch100: ttyd-1.7.4-manpage-writable-shortopt.patch
-
+%if 0%{?rhel} < 8
+BuildRequires: cmake3
+%else
 BuildRequires: cmake
+%endif
 BuildRequires: gcc
 BuildRequires: gcc-c++
 BuildRequires: json-c-devel
@@ -34,13 +36,16 @@ ttyd is a simple command-line tool for sharing terminal over the web.
 %prep
 # ttyd
 %setup -n %{name}-%{version}
-%patch100 -p1
 sed -i -e 's,find_package(Libwebsockets,#\0,' CMakeLists.txt
 
 # libwebsockets
 %setup -n %{name}-%{version} -T -D -a 100
 
 %build
+%if 0%{?rhel} < 8
+function cmake() { cmake3 "$@"; }
+%endif
+
 libuv_include=%{_includedir}
 libuv_lib=%{_libdir}/libuv.so
 
@@ -91,11 +96,11 @@ cmake \
 cmake --build . -- %{?_smp_mflags}
 
 %install
-%if 0%{?rhel} >= 8
-DESTDIR=%{buildroot} cmake --install .
-%else
-make install DESTDIR=%{buildroot}
+%if 0%{?rhel} < 8
+function cmake() { cmake3 "$@"; }
 %endif
+
+DESTDIR=%{buildroot} cmake --install .
 
 install -d -m 0755 %{buildroot}%{_datadir}/%{name}
 install -D -p -m 0644 -t %{buildroot}%{_datadir}/%{name}/ %{SOURCE1}
