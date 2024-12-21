@@ -1,3 +1,7 @@
+> [!NOTE]
+> **This branch is not maintained anymore**<br/>
+> `ttyd` is now available in [EPEL](https://docs.fedoraproject.org/en-US/epel/)
+
 | Package&nbsp;name | Supported&nbsp;targets |
 | :--- | :--- |
 | ttyd | el7, el8, el9 |
